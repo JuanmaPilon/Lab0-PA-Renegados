@@ -21,7 +21,7 @@ int Fecha::getAnio() const{
     return anio;
 }
 
-void Fecha::setDia() const{
+void Fecha::setDia(int dd) {
     if(dd < 1 || dd > 31){
         throw std::invalid_argument("Dia Invalido");
     }
