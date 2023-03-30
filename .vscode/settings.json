@@ -44,6 +44,7 @@
         "ostream": "cpp",
         "ranges": "cpp",
         "streambuf": "cpp",
+<<<<<<< HEAD
         "typeinfo": "cpp",
         "cstring": "cpp",
         "xmemory": "cpp",
@@ -51,5 +52,8 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp"
+=======
+        "typeinfo": "cpp"
+>>>>>>> 758bf1285afdfcf67b3b63333d69e279d7f8a9dd
     }
 }
