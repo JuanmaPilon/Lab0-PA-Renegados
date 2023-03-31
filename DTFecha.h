@@ -13,11 +13,8 @@ public:
   void setMes(int mm);
   void setAnio(int aaaa);
 
-<<<<<<< HEAD
-public:
-=======
 private:
->>>>>>> 758bf1285afdfcf67b3b63333d69e279d7f8a9dd
+
   int dia;
   int mes;
   int anio;
