@@ -3,15 +3,16 @@
 
 #include <stdexcept>
 
-class Fecha {
+class DTFecha {
 public:
-  Fecha(int dd, int mm, int aaaa);
+  DTFecha(int dd, int mm, int aaaa);
   int getDia() const;
   int getMes() const;
   int getAnio() const;
   void setDia(int dd);
   void setMes(int mm);
   void setAnio(int aaaa);
+  DTFecha();
 
 private:
 
