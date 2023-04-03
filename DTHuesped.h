@@ -26,4 +26,7 @@ public:
   void setEsFinger(bool esF) {
   esFinger = esF;
   }
+
 };
+
+

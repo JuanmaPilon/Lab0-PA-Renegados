@@ -4,12 +4,11 @@
 #include "EstadoReserva.h"
 #include "DTFecha.h"
 
-
 class DTReserva {
     private:
         int codigo;
-        Fecha checkIn;
-        Fecha checkOut;
+        DTFecha checkIn;
+        DTFecha checkOut;
         EstadoReserva estado;
         float costo;
         int habitacion;

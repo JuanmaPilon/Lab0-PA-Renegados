@@ -3,21 +3,19 @@
 
 #include <stdexcept>
 
-class Fecha {
+class DTFecha {
 public:
-  Fecha(int dd, int mm, int aaaa);
+  DTFecha(int dd, int mm, int aaaa);
   int getDia() const;
   int getMes() const;
   int getAnio() const;
   void setDia(int dd);
   void setMes(int mm);
   void setAnio(int aaaa);
+  DTFecha();
 
-<<<<<<< HEAD
-public:
-=======
 private:
->>>>>>> 758bf1285afdfcf67b3b63333d69e279d7f8a9dd
+
   int dia;
   int mes;
   int anio;
