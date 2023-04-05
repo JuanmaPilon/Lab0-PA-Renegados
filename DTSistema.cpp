@@ -1,7 +1,5 @@
 #include "DTSistema.h"
-#include "DtHabitacion.h"
-#include "Habitacion.h"
-#include <iostream>
+
 
 void DTSistema::agregarHuesped(string nombre,string email,bool esFinger) {
     for (DTHuesped* huesped : listaHuespedes) {
@@ -38,3 +36,26 @@ DTHuesped** DTSistema::obtenerHuespedes(int& cantHuespedes) {
     cantHuespedes = i;
     return arrHuespedes;
 }
+
+
+//En esta funcion trate de implementar la misma logica que en la anterior, pero nada seguro que este del todo bien
+
+DTHabitacion** DTSistema::obtenerHabitaciones(int& cantHabitaciones) {
+    DTHabitacion** arrHabitaciones = new DTHabitacion*[listaHabitaciones.size()];
+    /*el .size va a tomar la cantidad de habitaciones que hay en el vector. Tambien muy parecido
+    si alguno trabajo con JS con arr.length, es casi lo mismo*/
+    int i = 0;
+    for (DTHabitacion* habitacion : listaHabitaciones){
+        arrHabitaciones[i] = new DTHabitacion(habitacion->getNumero(),habitacion->getPrecioNoche(),habitacion->getCapacidad());
+        i++;
+    }
+    cantHabitaciones = i;
+    return arrHabitaciones;
+}
+
+/*DTReserva** obtenerReservas(DTFecha fecha,int& cantReservas)*/
+
+/*void registrarReserva(string emial,DTReserva* reserva){
+    DTHabitacion* DTHabitacion = buscarHabitacion(reserva->getNumero());
+
+}*/
