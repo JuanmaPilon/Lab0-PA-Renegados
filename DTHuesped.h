@@ -11,13 +11,11 @@ public:
     return nombre; 
   }
   string getEmail() const {
-
     return email; 
   }
   bool getEsFinger() const {
     return esFinger; 
   }
-
 
   void setNombre(string nom) {
   nombre = nom;
