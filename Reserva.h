@@ -4,7 +4,7 @@
 #include "Habitacion.h"
 #include "Huesped.h"
 class Reserva {
-    private:
+    protected:
         int codigo;
         DTFecha checkin;
         DTFecha checkout;
@@ -16,5 +16,13 @@ class Reserva {
         float calcularCosto();
         Reserva();
         Reserva(int codigo, DTFecha checkin, DTFecha checkout, EstadoReserva estado, Habitacion* habitacion, Huesped* huesped);// no se si el constructor por parametros lleva tambien los punteros, supongo que si, ver tambien que pasa con los constructores vacios de DTFecha
+        //getters
+        int getCodigo();
+        DTFecha getCheckIn();
+        DTFecha getCheckOut();
+        EstadoReserva getEstado();
+        Habitacion getHabitacion();
+        Huesped getHuesped();
+
 };
 

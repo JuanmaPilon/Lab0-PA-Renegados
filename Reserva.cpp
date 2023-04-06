@@ -14,3 +14,21 @@ Reserva::Reserva(int codigo, DTFecha checkin, DTFecha checkout, EstadoReserva es
 float calcularCosto{
 // 21?
 };
+int Reserva :: getCodigo(){
+    return codigo;
+};
+DTFecha Reserva :: getCheckIn(){
+    return checkin;
+};
+DTFecha Reserva :: getCheckOut(){
+    return checkout;
+};
+EstadoReserva Reserva :: getEstado(){
+    return estado;
+};
+Habitacion Reserva :: getHabitacion(){
+    return *habitacion;
+};
+Huesped Reserva :: getHuesped(){
+    return *huesped;
+};
