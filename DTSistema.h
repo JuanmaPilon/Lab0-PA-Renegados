@@ -11,10 +11,10 @@ gestiona todas las funciones relacionadas al hotel*/
 #include <iostream>
 #include <string>
 #include <vector>
-#include <DTHuesped.h>
-#include <DTReserva.h>
+#include "DTHuesped.h"
+#include "DTReserva.h"
 #include "Habitacion.h"
-#include "DtHabitacion.h"
+#include "DTHabitacion.h"
 
 using namespace std;
 
