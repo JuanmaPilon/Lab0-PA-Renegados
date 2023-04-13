@@ -1,6 +1,12 @@
 #include "DTReserva.h"
 #include "DTHuesped.h"
 class DTReservaGrupal : public DTReserva {
+public:
+    DTReservaGrupal();
+    DTReservaGrupal(DTHuesped*, int , DTFecha , DTFecha , EstadoReserva , float, int);
+    ~DTReservaGrupal();
+    DTHuesped** getHuespedes();
+    float calcularCosto();
 private:
-DTHuesped DTHuesped[]; // no se si esto esta bien att: el Carlangas
+    DTHuesped** huespedes;
 };

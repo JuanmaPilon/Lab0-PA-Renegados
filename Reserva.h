@@ -13,8 +13,9 @@ class Reserva {
         Habitacion* habitacion;
         Huesped* huesped;
     public:
-        float calcularCosto();
+        virtual float calcularCosto() = 0;
         Reserva();
+        ~Reserva();
         Reserva(int codigo, DTFecha checkin, DTFecha checkout, EstadoReserva estado, Habitacion* habitacion, Huesped* huesped);// no se si el constructor por parametros lleva tambien los punteros, supongo que si, ver tambien que pasa con los constructores vacios de DTFecha
         //getters
         int getCodigo();
@@ -23,6 +24,10 @@ class Reserva {
         EstadoReserva getEstado();
         Habitacion getHabitacion();
         Huesped getHuesped();
+        void setCodigo(int);
+        void setEstado(EstadoReserva);
+        void setCheckIn(DTFecha);
+        void setCheckOut(DTFecha);
 
 };
 
