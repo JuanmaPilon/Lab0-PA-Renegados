@@ -1,3 +1,5 @@
+#ifndef HABITACION_H
+#define HABITACION_H
 
 class Habitacion{
 private:
@@ -31,3 +33,5 @@ public:
         capacidad = cap;
     }
 };
+
+#endif //HABITACION_H

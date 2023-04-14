@@ -1,5 +1,5 @@
-#ifndef DTHABITACION_h
-#define DTHABITACION_h
+#ifndef DTHABITACION_H
+#define DTHABITACION_H
 
 #include <string>
 
@@ -19,4 +19,4 @@ class DTHabitacion {
 
 };
 
-#endif
+#endif // DTHABITACION_H

@@ -1,3 +1,5 @@
+#ifndef DTRESERVAINDIVIDUAL_H
+#define DTRESERVAINDIVIDUAL_H
 #include "DTReserva.h"
 
 class DTReservaIndividual : public DTReserva {
@@ -11,3 +13,5 @@ class DTReservaIndividual : public DTReserva {
         void setPagado(bool);
         float calcularCosto();
 };
+
+#endif // DTRESERVAINDIVIDUAL_H
