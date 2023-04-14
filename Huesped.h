@@ -1,5 +1,7 @@
 using namespace std;
 #include <string>
+#ifndef HABITACION_h
+#define HABITACION_h
 
 class Huesped {
 
@@ -15,13 +17,13 @@ public:
 
     //getters
     string getNombre() const{
-        return nombre; 
+        return nombre;
     }
     string getEmail() const{
-        return email; 
+        return email;
     }
     bool getEsFinger() const{
-        return esFinger; 
+        return esFinger;
     }
 
     //setters
@@ -35,3 +37,5 @@ public:
         esFinger = esF;
     }
 };
+
+#endif
