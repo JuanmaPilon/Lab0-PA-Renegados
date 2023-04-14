@@ -31,6 +31,8 @@ class DTSistema {
         DTHabitacion** obtenerHabitaciones(int& cantHabitaciones);
         /*Aca iria obtenerReservas*/
         void registrarReserva(std::string email,DTReserva* reserva);
+        void mostrarHuespedes();
+        void mostrarHabiatacion();
 };
 
 #endif //DTSISTEMA_h

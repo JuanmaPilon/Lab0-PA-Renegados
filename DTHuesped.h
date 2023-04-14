@@ -2,6 +2,7 @@
 #define DTHUESPED_H
 
 #include <string>
+
 using namespace std;
 class DTHuesped {
 private:
@@ -11,13 +12,13 @@ private:
 public:
   DTHuesped(string nom,string ema,bool esF) : nombre(nom) , email(ema), esFinger(esF) {}
   string getNombre() const {
-    return nombre; 
+    return nombre;
   }
   string getEmail() const {
-    return email; 
+    return email;
   }
   bool getEsFinger() const {
-    return esFinger; 
+    return esFinger;
   }
 
   void setNombre(string nom) {
