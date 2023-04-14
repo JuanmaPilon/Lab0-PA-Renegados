@@ -59,3 +59,92 @@ DTHabitacion** DTSistema::obtenerHabitaciones(int& cantHabitaciones) {
     DTHabitacion* DTHabitacion = buscarHabitacion(reserva->getNumero());
 
 }*/
+Reserva* Crear_Reserva(Huesped* const huesped, DTReserva* const datos)
+{
+    Reserva* reserva = nullptr;
+
+    if(dynamic_cast<DTReservaIndividual*>(datos))
+    {
+        reserva = (Reserva*) new ReservaIndividual(huesped,(DTReservaIndividual*) datos);
+    }
+    else
+    {
+    if(dynamic_cast<DTReservaGrupal*>(datos))
+    {
+        reserva = (Reserva*) new ReservaGrupal(huesped,(DTReservaGrupal*) datos);
+    }
+    else
+    {
+        throw std::invalid_argument("Reserva invalida");
+    }
+    }
+    return reserva;
+}
+
+void DTSistema::registrarReserva(string email, DTReserva* datos)
+{
+
+Huesped* const huesped = buscar_huesped (email);///funcion buscar o existe huesped deberia estar creada
+
+if(cantidad_reservas >= MAX_RESERVAS)
+{
+    throw std::invalid_argument("Maxima Reserva");
+}
+else
+{
+    if(huesped ==nullptr)
+    {
+        throw std::invalid_argument("Huesped no existe");
+    }
+    else
+    {
+        Reserva* const reserva = Crear_Reserva(huesped, datos);
+    }
+
+    reservas [cantidad_reservas] = reserva;
+    cantidad_reservas +=1;
+    habitacion->Agregar_Reserva(reserva);///habitacion o reserva
+}
+}
+
+///////////////////MOVER AL MENU//////////////////
+
+DTReserva* Datos_Reserva(string const email) ////si no usan const borren los const
+{
+///segun el menu usar cout aqui o usar un Ingresar::nombreDeFuncion ej Ingresar::Fecha
+
+    DTReserva* datos = nullptr;
+
+    int const codigo;///codigo random, usar rand
+
+    DTFecha const CheckIn;
+
+    DTFecha const CheckOut;
+
+    EstadoReserva estado;
+
+    float costo;
+
+    int habitacion;
+
+    bool const grupal;
+
+    cout<<"Grupal? Si/No"<<endl;
+
+    if(grupal)
+    {
+        string* const huespedes;
+
+        datos = new DTReservaGrupal(huespedes, codigo, checkIn, checkOut, estado, costo, habitacion);
+    }
+
+    else
+    {
+        bool const pagado;
+
+        datos = new DTReservaIndividual(codigo, checkIn, checkOut, estado, costo, habitacion, pagado);
+    }
+
+    return datos;
+
+}

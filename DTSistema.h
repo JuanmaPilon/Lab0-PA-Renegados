@@ -15,6 +15,11 @@ gestiona todas las funciones relacionadas al hotel*/
 #include "DTReserva.h"
 #include "Habitacion.h"
 #include "DTHabitacion.h"
+#include "Reserva.h"
+#include "DTReservaIndividual.h"
+#include "ReservaIndividual.h"
+#include "DTReservaGrupal.h"
+#include "ReservaGrupal.h"
 
 using namespace std;
 
