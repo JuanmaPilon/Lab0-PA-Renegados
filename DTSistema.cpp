@@ -1,5 +1,13 @@
 #include "DTSistema.h"
+#include "DTHabitacion.h"
+#include "Huesped.h"
+#include "ReservaGrupal.h"
+#include "ReservaIndividual.h"
+#include "Habitacion.h"
+#include "Reserva.h"
 
+
+#include <map>
 
 void DTSistema::agregarHuesped(string nombre,string email,bool esFinger) {
     for (DTHuesped* huesped : listaHuespedes) {
@@ -15,17 +23,17 @@ void DTSistema::agregarHuesped(string nombre,string email,bool esFinger) {
 
 }
 
-void DTSistema::mostrarHuespedes() {
-    for (DTHuesped* huesped : listaHuespedes) {
-        cout << "Nombre: " << huesped->getNombre() << endl;
-        cout << "Email: " << huesped->getEmail() << endl;
-        if (huesped->getEsFinger()) {
-            cout << "Es Finger: Si" << endl;
-        } else {
-            cout << "Es Finger: No" << endl;
-        }
-    }
-}
+// void DTSistema::mostrarHuespedes() {
+//     for (DTHuesped* huesped : listaHuespedes) {
+//         cout << "Nombre: " << huesped->getNombre() << endl;
+//         cout << "Email: " << huesped->getEmail() << endl;
+//         if (huesped->getEsFinger()) {
+//             cout << "Es Finger: Si" << endl;
+//         } else {
+//             cout << "Es Finger: No" << endl;
+//         }
+//     }
+// }
 
 
 
@@ -41,14 +49,14 @@ void DTSistema::agregarHabitacion(int numero,float precio,int capacidad) {
 }
 
 
-void DTSistema::mostrarHabiatacion() {
-    for (DTHabitacion* Habitacion : listaHabitaciones) {
-        cout << "Numero: " << Habitacion->getNumero() << endl;
-        cout << "precio: " << Habitacion->getPrecioNoche() << endl;
-        cout << "capacidad: " << Habitacion->getCapacidad() << endl;
+// void DTSistema::mostrarHabiatacion() {
+//     for (DTHabitacion* Habitacion : listaHabitaciones) {
+//         cout << "Numero: " << Habitacion->getNumero() << endl;
+//         cout << "precio: " << Habitacion->getPrecioNoche() << endl;
+//         cout << "capacidad: " << Habitacion->getCapacidad() << endl;
 
-    }
-}
+//     }
+// }
 
 /*Se usa un ** porque es un arreglo dinamico*/
 
@@ -79,9 +87,55 @@ DTHabitacion** DTSistema::obtenerHabitaciones(int& cantHabitaciones) {
     return arrHabitaciones;
 }
 
-/*DTReserva** obtenerReservas(DTFecha fecha,int& cantReservas)*/
+// Function auxiliar para buscar habitacion por numero
+// Devuelve un puntero a la habitacion si se encuentra
+Habitacion* buscarHabitacion(int numHabitacion, map<int, Habitacion*>& habitaciones) {
+    auto it = habitaciones.find(numHabitacion);
+    if (it == habitaciones.end()) {
+        return nullptr;
+    }
+    return it->second;
+}
 
-/*void registrarReserva(string emial,DTReserva* reserva){
-    DTHabitacion* DTHabitacion = buscarHabitacion(reserva->getNumero());
+// Funcition auxiliar para buscar un huesped por su email
+// Devuelve un puntero al huesped si se encuentra
+Huesped* buscarHuesped(string email, map<string, Huesped*>& huespedes) {
+    auto it = huespedes.find(email);
+    if (it == huespedes.end()) {
+        return nullptr; 
+    }
+    return it->second;
+}
 
-}*/
+
+
+//Esta la saque de GPT pero tiene cosas que no tenemos y habria que armarla
+//Pueden comentarla para compilar
+
+// void DTSistema::registrarReserva(string email, DTReserva* reserva) {
+//     // Verificar si el huésped existe
+//     if (!existeHuesped(email)) {
+//         throw std::invalid_argument("No existe un huésped registrado con el email indicado.");
+//     }
+
+//     // Obtener la habitación
+//     Habitacion* habitacion = getHabitacion(reserva->getNumeroHabitacion());
+
+//     // Verificar si la habitación existe
+//     if (habitacion == nullptr) {
+//         throw std::invalid_argument("No existe una habitación registrada con el número indicado.");
+//     }
+
+//     // Crear la reserva
+//     Reserva* nuevaReserva = nullptr;
+//     if (dynamic_cast<DtReservaIndividual*>(reserva)) {
+//         // Es una reserva individual
+//         nuevaReserva = new ReservaIndividual(generarCodigoReserva(), reserva->getCheckIn(), reserva->getCheckOut(), reserva->getPagada(), habitacion, getHuesped(email));
+//     } else if (dynamic_cast<DTReservaGrupal*>(reserva)) {
+//         // Es una reserva grupal
+//         nuevaReserva = new ReservaGrupal(generarCodigoReserva(), reserva->getCheckIn(), reserva->getCheckOut(), dynamic_cast<DTReservaGrupal*>(reserva)->getHuespedes(), habitacion, getHuesped(email));
+//     }
+
+//     // Agregar la reserva a la lista de reservas
+//     reservas.push_back(nuevaReserva);
+// }
