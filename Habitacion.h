@@ -1,3 +1,6 @@
+#ifndef HABITACION_h
+#define HABITACION_h
+
 
 class Habitacion{
 private:
@@ -32,3 +35,4 @@ public:
     }
 };
 
+#endif

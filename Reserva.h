@@ -3,6 +3,9 @@
 #include "DTFecha.h"
 #include "Habitacion.h"
 #include "Huesped.h"
+
+#ifndef RESERVA_H
+#define RESERVA_H
 class Reserva {
     protected:
         int codigo;
@@ -31,3 +34,4 @@ class Reserva {
 
 };
 
+#endif
