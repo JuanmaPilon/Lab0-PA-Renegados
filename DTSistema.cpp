@@ -9,10 +9,25 @@ void DTSistema::agregarHuesped(string nombre,string email,bool esFinger) {
     }
     DTHuesped* nuevoHuesped = new DTHuesped(nombre,email,esFinger);
     listaHuespedes.push_back(nuevoHuesped);
-
-    /*La funcion pushback la sacamos de "vector", que basicamente es lo mismo que el .push de JS si 
+    cout<<"aviso"<<endl;
+    /*La funcion pushback la sacamos de "vector", que basicamente es lo mismo que el .push de JS si
     alguno conoce la funcion*/
+
 }
+
+void DTSistema::mostrarHuespedes() {
+    for (DTHuesped* huesped : listaHuespedes) {
+        cout << "Nombre: " << huesped->getNombre() << endl;
+        cout << "Email: " << huesped->getEmail() << endl;
+        if (huesped->getEsFinger()) {
+            cout << "Es Finger: Si" << endl;
+        } else {
+            cout << "Es Finger: No" << endl;
+        }
+    }
+}
+
+
 
 void DTSistema::agregarHabitacion(int numero,float precio,int capacidad) {
     for (DTHabitacion* habitacion : listaHabitaciones) {
@@ -22,6 +37,17 @@ void DTSistema::agregarHabitacion(int numero,float precio,int capacidad) {
     }
     DTHabitacion* nuevaHabtiacion = new DTHabitacion(numero,precio,capacidad);
     listaHabitaciones.push_back(nuevaHabtiacion);
+
+}
+
+
+void DTSistema::mostrarHabiatacion() {
+    for (DTHabitacion* Habitacion : listaHabitaciones) {
+        cout << "Numero: " << Habitacion->getNumero() << endl;
+        cout << "precio: " << Habitacion->getPrecioNoche() << endl;
+        cout << "capacidad: " << Habitacion->getCapacidad() << endl;
+
+    }
 }
 
 /*Se usa un ** porque es un arreglo dinamico*/

@@ -10,7 +10,7 @@ public:
     Habitacion(int numero, float precio, int capacidad);
 
     //getters
-    
+
     int getNumero() const{
         return numero;
     }
@@ -31,3 +31,4 @@ public:
         capacidad = cap;
     }
 };
+
