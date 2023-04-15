@@ -34,4 +34,4 @@ class DTReserva {
         int habitacion;
 };
 
-#endif
+#endif // DTRESERVA_H

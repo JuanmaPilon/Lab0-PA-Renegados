@@ -1,6 +1,8 @@
 #ifndef DTHUESPED_H
 #define DTHUESPED_H
+
 #include <string>
+
 using namespace std;
 class DTHuesped {
 private:
@@ -31,4 +33,4 @@ public:
 
 };
 
-#endif
+#endif // DTHUESPED_H

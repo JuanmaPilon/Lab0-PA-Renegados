@@ -10,7 +10,7 @@ Habitacion::Habitacion(int numero, float precio, int capacidad) {
 }
 
 //getters
-/*int Habitacion :: getNumero() const {
+int Habitacion :: getNumero() const {
     return numero;
 };
 float Habitacion::getPrecio() const {
@@ -28,4 +28,4 @@ void Habitacion::setPrecio(float precio) {
 };
 void Habitacion::setCapacidad(int capacidad) {
     this->capacidad = capacidad;
-};*/
+};

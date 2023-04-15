@@ -1,3 +1,6 @@
+#ifndef DTRESERVAINDIVIDUAL_H
+#define DTRESERVAINDIVIDUAL_H
+
 #include "DTReserva.h"
 #include "DTHuesped.h"
 class DTReservaGrupal : public DTReserva {
@@ -10,3 +13,5 @@ public:
 private:
     DTHuesped** huespedes;
 };
+
+#endif // DTRESERVAINDIVIDUAL_H

@@ -33,5 +33,4 @@ class Reserva {
         void setCheckOut(DTFecha);
 
 };
-
 #endif

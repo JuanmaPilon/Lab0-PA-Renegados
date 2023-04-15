@@ -1,7 +1,7 @@
 using namespace std;
 #include <string>
-#ifndef HUESPED_H
-#define HUESPED_H
+#ifndef HABITACION_h
+#define HABITACION_h
 
 class Huesped {
 
