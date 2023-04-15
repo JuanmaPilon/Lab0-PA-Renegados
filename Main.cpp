@@ -44,7 +44,6 @@ int main() {
                 catch (const std::invalid_argument& e) {
                     // Captura la excepción y muestra el mensaje de error
                     std::cerr << "Error: " << e.what() << '\n';
-                    // Realizar cualquier otra acción necesaria
                 }
 
 
@@ -65,7 +64,14 @@ int main() {
                 double precioNoche;
                 cout << "Ingrese el precio por noche: ";
                 cin >> precioNoche;
+
+                try{
                 sistema.agregarHabitacion(tipoHabitacion, numeroHabitacion, precioNoche);
+                }
+                catch (const std::invalid_argument& e) {
+                    // Captura la excepción y muestra el mensaje de error
+                    std::cerr << "Error: " << e.what() << '\n';
+                }
                 cout << "Desea seguir en el programa Y/N " << endl;
                 cin >> palabra;
                 if (palabra == "N" || palabra == "n") {
