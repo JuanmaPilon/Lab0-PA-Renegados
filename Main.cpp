@@ -35,9 +35,18 @@ int main() {
                 bool finger;
                 cout << "Es Finger? (true = 1/false = 0): ";
                 cin >> finger;
+
+                try{
                 sistema.agregarHuesped(nombre, email, finger);
                 cout << "Datos guardados: ";
                 sistema.mostrarHuespedes();
+                }
+                catch (const std::invalid_argument& e) {
+                    // Captura la excepción y muestra el mensaje de error
+                    std::cerr << "Error: " << e.what() << '\n';
+                    // Realizar cualquier otra acción necesaria
+                }
+
 
                 cout << "Desea seguir en el programa Y/N " << endl;
                 cin >> palabra;
