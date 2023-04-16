@@ -17,23 +17,23 @@ void DTSistema::agregarHuesped(string nombre,string email,bool esFinger) {
     }
     DTHuesped* nuevoHuesped = new DTHuesped(nombre,email,esFinger);
     listaHuespedes.push_back(nuevoHuesped);
-    cout<<"aviso"<<endl;
+
     /*La funcion pushback la sacamos de "vector", que basicamente es lo mismo que el .push de JS si
     alguno conoce la funcion*/
 
 }
 
-// void DTSistema::mostrarHuespedes() {
-//     for (DTHuesped* huesped : listaHuespedes) {
-//         cout << "Nombre: " << huesped->getNombre() << endl;
-//         cout << "Email: " << huesped->getEmail() << endl;
-//         if (huesped->getEsFinger()) {
-//             cout << "Es Finger: Si" << endl;
-//         } else {
-//             cout << "Es Finger: No" << endl;
-//         }
-//     }
-// }
+ void DTSistema::mostrarHuespedes() {
+    for (DTHuesped* huesped : listaHuespedes) {
+        cout << "Nombre: " << huesped->getNombre() << endl;
+        cout << "Email: " << huesped->getEmail() << endl;
+        if (huesped->getEsFinger()) {
+           cout << "Es Finger: Si" << endl;
+         } else {
+             cout << "Es Finger: No" << endl;
+         }
+    }
+ }
 
 
 
@@ -69,6 +69,8 @@ DTHuesped** DTSistema::obtenerHuespedes(int& cantHuespedes) {
     }
     cantHuespedes = i;
     return arrHuespedes;
+
+
 }
 
 
@@ -102,7 +104,7 @@ Habitacion* buscarHabitacion(int numHabitacion, map<int, Habitacion*>& habitacio
 Huesped* buscarHuesped(string email, map<string, Huesped*>& huespedes) {
     auto it = huespedes.find(email);
     if (it == huespedes.end()) {
-        return nullptr; 
+        return nullptr;
     }
     return it->second;
 }

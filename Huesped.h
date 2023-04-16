@@ -1,7 +1,7 @@
 using namespace std;
 #include <string>
-#ifndef HABITACION_h
-#define HABITACION_h
+#ifndef HUESPED_H
+#define HUESPED_H
 
 class Huesped {
 
@@ -37,5 +37,4 @@ public:
         esFinger = esF;
     }
 };
-
-#endif
+#endif // HUESPED_H

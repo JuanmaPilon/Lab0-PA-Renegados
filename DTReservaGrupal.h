@@ -1,5 +1,5 @@
-#ifndef DTRESERVAINDIVIDUAL_H
-#define DTRESERVAINDIVIDUAL_H
+#ifndef DTRESERVAGRUPAL_H
+#define DTRESERVAGRUPAL_H
 
 #include "DTReserva.h"
 #include "DTHuesped.h"
@@ -14,4 +14,4 @@ private:
     DTHuesped** huespedes;
 };
 
-#endif // DTRESERVAINDIVIDUAL_H
+#endif

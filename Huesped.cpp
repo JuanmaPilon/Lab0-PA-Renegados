@@ -9,7 +9,7 @@ Huesped::Huesped(string nombre, string email, bool esFinger) {
     this->esFinger = esFinger;
 }
 //getters
-string Huesped::getNombre() const{
+/*string Huesped::getNombre() const{
     return nombre;
 }
 string Huesped::getEmail() const{
@@ -27,4 +27,4 @@ void Huesped::setEmail(string email) {
 }
 void Huesped::setEsFinger(bool esFinger) {
     this->esFinger = esFinger;
-}
+}*/
