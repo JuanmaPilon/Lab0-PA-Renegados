@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////
+
+#pragma once
+
+////////////////////////////////////////////////////////////////
+
+#include "./reserva.h"
+#include "../dt/reserva_individual.h"
+
+////////////////////////////////////////////////////////////////
+
+class ReservaIndividual : Reserva
+{
+	private: bool  pagado;
+
+	public: ReservaIndividual ( Huesped*, DtReservaIndividual* );
+
+	public: DtReserva* Crear_Dt                   () override;
+	public: float      calcularCosto () override;
+	public: int        darHabitacion();
+};
+
+////////////////////////////////////////////////////////////////

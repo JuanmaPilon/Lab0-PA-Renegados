@@ -1,0 +1,27 @@
+////////////////////////////////////////////////////////////////
+
+#pragma once
+
+////////////////////////////////////////////////////////////////
+
+#include "../dt/fecha_hora.h"
+#include "../dt/reserva.h"
+#include "./header.h"
+
+////////////////////////////////////////////////////////////////
+
+class Reserva
+{
+	protected:
+		int codigo;
+		DtFechaHora checkIn;
+		DtFechaHora checkOut;
+		EstadoReserva estado;
+		Huesped*    huesped;
+
+	public:
+		virtual float      calcularCosto () = 0;
+		virtual DtReserva* Crear_Dt                   () = 0;
+};
+
+////////////////////////////////////////////////////////////////
