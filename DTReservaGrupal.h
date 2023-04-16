@@ -14,4 +14,4 @@ private:
     DTHuesped** huespedes;
 };
 
-#endif
+#endif // DTRESERVAGRUPAL_H

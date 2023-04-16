@@ -5,6 +5,8 @@
 #include "ReservaIndividual.h"
 #include "Habitacion.h"
 #include "Reserva.h"
+#include "DTHuesped.h"
+#include "DTReserva.h"
 
 
 #include <map>
@@ -141,3 +143,185 @@ Huesped* buscarHuesped(string email, map<string, Huesped*>& huespedes) {
 //     // Agregar la reserva a la lista de reservas
 //     reservas.push_back(nuevaReserva);
 // }
+
+
+
+// void DTSistema::registrarReserva() {
+//     string email;
+//     cout << "Ingrese el email del huesped: ";
+//     cin >> email;
+//     if (!existeHuesped(email)) {
+//         throw invalid_argument("No existe un huesped registrado con el email indicado.");
+//     }
+//     int numeroHabitacion;
+//     cout << "Ingrese el numero de la habitacion: ";
+//     cin >> numeroHabitacion;
+//     if (!existeHabitacion(numeroHabitacion)) {
+//         throw invalid_argument("No existe una habitacion registrada con el numero indicado.");
+//     }
+//     int cantNoches;
+//     cout << "Ingrese la cantidad de noches: ";
+//     cin >> cantNoches;
+//     bool pagada;
+//     cout << "La reserva esta pagada? (1 = Si, 0 = No): ";
+//     cin >> pagada;
+//     int tipo;
+//     cout << "Ingrese el tipo de reserva (1 = Individual, 2 = Grupal): ";
+//     cin >> tipo;
+//     if (tipo == 1) {
+//     ReservaIndividual* nueva;
+//       Reserva = new DTReservaIndividual(codigo, checkIn, checkOut, estado, costo, habitacion, pagado);
+//     } else if (tipo == 2) {
+//         registrarReservaGrupal(email, numeroHabitacion, cantNoches, pagada);
+//     } else {
+//         throw invalid_argument("El tipo de reserva ingresado no es valido.");
+//     }
+//     Reserva* nuevaReserva = new Reserva(generarCodigoReserva(),cantNoches,pagada,numeroHabitacion,email);
+//     listaReservas.push_back(nuevaReserva);
+// }
+
+
+bool DTSistema::existeHuesped(string email) {
+    for (DTHuesped* huesped : listaHuespedes) {
+        if (huesped->getEmail() == email) {
+            return true;
+        } 
+    }
+    return false;
+}
+
+int DTSistema::generarCodigoReserva() {
+    int codigo = 0;
+    for (DTReserva* reserva : listaReservas) {
+        if (reserva->getCodigo() > codigo) {
+            codigo = reserva->getCodigo();
+        }
+    }
+    return codigo + 1;
+}
+
+bool DTSistema::existeHabitacion(int numeroHabitacion) {
+    for (DTHabitacion* habitacion : listaHabitaciones) {
+        if (habitacion->getNumero() == numeroHabitacion) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////
+// Aca empieza German
+
+Reserva* Crear_Reserva(Huesped* const huesped, DTReserva* const datos)
+{
+    Reserva* reserva = nullptr;
+
+    if(dynamic_cast<DTReservaIndividual*>(datos))
+    {
+        reserva = (Reserva*) new ReservaIndividual(huesped,(DTReservaIndividual*) datos);
+    }
+    else
+    {
+    if(dynamic_cast<DTReservaGrupal*>(datos))
+    {
+        reserva = (Reserva*) new ReservaGrupal(huesped,(DTReservaGrupal*) datos);
+    }
+    else
+    {
+        throw std::invalid_argument("Reserva invalida");
+    }
+    }
+    return reserva;
+}
+
+void buscar_huesped (string const email)
+{
+    for (int i = 0; i < listaHuespedes.size(); i++)
+    {
+        if (huespedes[i]->getEmail() == email)
+        {
+            return huespedes[i];
+        }
+    }
+    return nullptr;
+}
+
+void DTSistema::registrarReserva(string email, DTReserva* datos)
+{
+
+Huesped* const huesped = buscar_huesped (email);///funcion buscar o existe huesped deberia estar creada
+
+if(cantidad_reservas >= MAX_RESERVAS)
+{
+    throw std::invalid_argument("Maxima Reserva");
+}
+else
+{
+    if(huesped ==nullptr)
+    {
+        throw std::invalid_argument("Huesped no existe");
+    }
+    else
+    {
+        Reserva* const reserva = Crear_Reserva(huesped, datos);
+    }
+
+    reservas [cantidad_reservas] = reserva;
+    cantidad_reservas +=1;
+    habitacion->Agregar_Reserva(reserva);///habitacion o reserva
+}
+}
+
+///////////////////MOVER AL MENU//////////////////
+
+DTReserva* DTSistema::Datos_Reserva(string const email) ////si no usan const borren los const
+{
+///segun el menu usar cout aqui o usar un Ingresar::nombreDeFuncion ej Ingresar::Fecha
+
+    DTReserva* datos = nullptr;
+
+    int codigo = generarCodigoReserva();///codigo random, usar rand
+
+    DTFecha const CheckIn;
+
+    DTFecha const CheckOut;
+
+    EstadoReserva estado;
+
+    float costo;
+
+    int habitacion;
+
+    bool grupal;
+
+    cout<<"Grupal? Si/No"<<endl;
+
+    if(grupal)
+    {
+        string* const huespedes;
+
+        datos = new DTReservaGrupal(codigo, CheckIn, CheckOut, estado, costo, habitacion, huespedes);
+    }
+
+    else
+    {
+        bool pagado;
+
+        datos = new DTReservaIndividual(codigo, CheckIn, CheckOut, estado, costo, habitacion, pagado);
+    }
+
+    return datos;
+
+}
+

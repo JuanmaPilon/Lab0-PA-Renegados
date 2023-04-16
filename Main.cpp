@@ -42,7 +42,7 @@ int main() {
                 sistema.mostrarHuespedes();
                 }
                 catch (const std::invalid_argument& e) {
-                    // Captura la excepción y muestra el mensaje de error
+                    // Captura la excepciï¿½n y muestra el mensaje de error
                     std::cerr << "Error: " << e.what() << '\n';
                 }
 
@@ -69,7 +69,7 @@ int main() {
                 sistema.agregarHabitacion(tipoHabitacion, numeroHabitacion, precioNoche);
                 }
                 catch (const std::invalid_argument& e) {
-                    // Captura la excepción y muestra el mensaje de error
+                    // Captura la excepciï¿½n y muestra el mensaje de error
                     std::cerr << "Error: " << e.what() << '\n';
                 }
                 cout << "Desea seguir en el programa Y/N " << endl;

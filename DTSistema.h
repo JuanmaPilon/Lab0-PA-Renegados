@@ -15,6 +15,12 @@ gestiona todas las funciones relacionadas al hotel*/
 #include "DTReserva.h"
 #include "Habitacion.h"
 #include "DTHabitacion.h"
+#include "Reserva.h"
+#include "Huesped.h"
+#include "ReservaGrupal.h"
+#include "ReservaIndividual.h"
+#include "DTReservaGrupal.h"
+#include "DTReservaIndividual.h"
 
 using namespace std;
 
@@ -22,6 +28,7 @@ class DTSistema {
     private:
         vector<DTHuesped*> listaHuespedes;
         vector<DTHabitacion*> listaHabitaciones;
+        vector<DTReserva*> listaReservas;
 
 
     public:
@@ -31,8 +38,12 @@ class DTSistema {
         DTHabitacion** obtenerHabitaciones(int& cantHabitaciones);
         /*Aca iria obtenerReservas*/
         void registrarReserva(std::string email,DTReserva* reserva);
-         void mostrarHuespedes();
-        // void mostrarHabiatacion();
+        void mostrarHuespedes();
+        int generarCodigoReserva();
+        bool existeHuesped(string email);
+        bool existeHabitacion(int numero);
+        // DTReserva* Datos_Reserva(string const email);
+        // DTHuesped* buscar_huesped(string email);
 };
 
 #endif //DTSISTEMA_H

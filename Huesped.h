@@ -1,7 +1,9 @@
-using namespace std;
-#include <string>
 #ifndef HUESPED_H
 #define HUESPED_H
+
+using namespace std;
+#include <string>
+
 
 class Huesped {
 
