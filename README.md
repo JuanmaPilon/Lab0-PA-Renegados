@@ -1,4 +1,11 @@
-Laboratorio final de la materia Programacion Avanzada. El proyecto fue desarrollado con C++.
+# Programacion Avanzada
 
-El proyecto se basa en un sistema de reservas para hoteles, donde se pueden reservar habitaciones, las cuales se checkea la disponibilidad de si estaran ocupadas o no en cierto intervalo de tiempo.
-El hotel debe ser capaz de manejar y gestionar todas las reservas a traves de este pequeño programa.
+Laboratorio final de la asignatura Programación avanzada.
+Hecho con C++.
+Consiste en un sistema creado con C++ para la gestión y administración de un sistema de gestión y gestión hotelera.
+
+## Autores:
+
+* **[Juan Martin Pilon](https://github.com/JuanmaPilon)**
+* **[Carlos Santana](https://github.com/Carlangassss)**
+* **[Nicolas Silva](https://github.com/NicoSTeam)**
